@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HackHub — Discover Your Next Hackathon</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- External stylesheet — no JS used anywhere in this project -->
+  <link rel="stylesheet" href="hackhubcss.css">
+</head>
+
+<body>
+
+  <!-- Hidden checkbox for CSS-only mobile nav toggle -->
+  <input type="checkbox" id="nav-toggle">
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a href="#home" class="logo" aria-label="HackHub home">
+        <div class="logo-icon" aria-hidden="true">✦</div>
+        <span class="logo-text">Hack<span>Hub</span></span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#calendar">Calendar</a></li>
+        <li><a href="#find-team">Find Team</a></li>
+        <li><a href="#make-team">Make a Team</a></li>
+        <li><a href="#how-it-works">How it Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Sign-in CTA — opens auth modal via CSS :target -->
+      <a href="#modal-auth" class="btn-primary nav-signin">Sign In →</a>
+
+      <!-- Hamburger toggle label (pure CSS) -->
+      <label for="nav-toggle" class="hamburger-label" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+    </div>
+  </nav>
+
+  <!-- Mobile slide-down menu -->
+  <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#home">Home</a>
+    <a href="#calendar">Calendar</a>
+    <a href="#find-team">Find Team</a>
+    <a href="#make-team">Make a Team</a>
+    <a href="#how-it-works">How it Works</a>
+    <a href="#contact">Contact</a>
+    <a href="#modal-auth" class="btn-primary" style="margin-top:.5rem;justify-content:center;">Sign In →</a>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section id="home" class="hero" aria-label="Hero">
+
+    <div class="hero-blob blob1" aria-hidden="true"></div>
+    <div class="hero-blob blob2" aria-hidden="true"></div>
+
+    <div class="hero-particles" aria-hidden="true">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <div class="floating-icons" aria-hidden="true">
+      <span style="top:22%;left:8%">⚛</span>
+      <span style="top:62%;left:14%">🐍</span>
+      <span style="top:28%;right:9%">🧠</span>
+      <span style="top:68%;right:18%">🔗</span>
+    </div>
+
+    <div class="hero-badge" aria-hidden="true">Live Registrations Open</div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">500+ Hackathons Listed Worldwide</div>
+      <h1>Discover Your <span class="highlight">Next Hackathon</span></h1>
+      <p>Find, filter, and participate in hackathons tailored to your skills — from beginner sprints to advanced championships.</p>
+
+      <!--
+        SEARCH BAR: Uses <datalist> for CSS-native suggestions.
+        Searching by name/tech/team member — no JS required.
+      -->
+      <form class="search-bar" action="#calendar" method="get" role="search">
+        <input
+          type="text"
+          name="search"
+          list="search-suggestions"
+          placeholder="Search hackathons, tech stacks, or team members…"
+          aria-label="Search hackathons, tech stacks, or team members"
+          autocomplete="off">
+        <!-- Datalist provides browser-native dropdown suggestions without JS -->
+        <datalist id="search-suggestions">
+          <!-- Hackathon names -->
+          <option value="Global AI Builders Summit 2026">
+          <option value="AI Innovation Challenge 2026">
+          <option value="Web3 Builders Hackathon">
+          <option value="Mobile App Innovation Sprint">
+          <option value="Climate Tech Hackathon">
+          <option value="HealthTech Innovation Cup">
+          <option value="GameDev Jam 2026">
+          <option value="FinTech Disruptors Challenge">
+          <option value="Open Source Sprint">
+          <option value="EdTech Innovation Hackathon">
+          <option value="Cybersecurity Defend-a-Thon">
+          <option value="Smart Cities Hack">
+          <!-- Tech stacks -->
+          <option value="Python">
+          <option value="TensorFlow">
+          <option value="PyTorch">
+          <option value="React">
+          <option value="Node.js">
+          <option value="MongoDB">
+          <option value="Solidity">
+          <option value="Blockchain">
+          <option value="React Native">
+          <option value="Flutter">
+          <option value="Unity">
+          <option value="Unreal Engine">
+          <!-- Team members -->
+          <option value="Rahul Sharma — Full Stack Developer">
+          <option value="Priya Kumar — ML Engineer">
+          <option value="Amit Singh — UI/UX Designer">
+          <option value="Neha Verma — Backend Engineer">
+          <option value="Rohan Mehta — DevOps Engineer">
+          <option value="Sneha Patel — Data Scientist">
+        </datalist>
+        <button type="submit" class="btn-search">Search</button>
+      </form>
+
+      <div class="scroll-indicator" aria-hidden="true"></div>
+
+      <!-- Platform stats bar -->
+      <div class="hero-stats" aria-label="Platform statistics">
+        <div class="hero-stat">
+          <span class="hero-stat-icon" aria-hidden="true">◈</span>
+          <strong>500+</strong>
+          <span>Hackathons</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-icon" aria-hidden="true">◉</span>
+          <strong>10K+</strong>
+          <span>Active Users</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-icon" aria-hidden="true">◎</span>
+          <strong>50+</strong>
+          <span>Countries</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-icon" aria-hidden="true">◆</span>
+          <strong class="counted">$20,000+</strong>
+         
+          <span>Total Prizes</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Wave divider -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" class="wave-to-surface"/>
+    </svg>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       FILTERS
+  ══════════════════════════════════════════ -->
+  <section class="filters grid-bg fade-in" aria-label="Filter hackathons">
+    <div class="container">
+
+      <p class="section-label">Smart Filtering</p>
+      <h2>Filter Hackathons</h2>
+
+    
+      <div class="filter-tabs">
+        <input type="radio" name="filter-tab" id="tab1" checked>
+        <input type="radio" name="filter-tab" id="tab2">
+        <input type="radio" name="filter-tab" id="tab3">
+        <input type="radio" name="filter-tab" id="tab4">
+
+        <div class="tab-labels" role="tablist">
+          <label for="tab1" role="tab">Date Range</label>
+          <label for="tab2" role="tab">Mode</label>
+          <label for="tab3" role="tab">Tech Stack</label>
+          <label for="tab4" role="tab">Experience</label>
+        </div>
+
+        <div class="tab-content">
+
+          <!-- Date Range panel -->
+          <div class="tab-panel" role="tabpanel">
+            <div class="filter-options">
+              <label class="filter-option"><input type="radio" name="date" value="week"><span>This Week</span></label>
+              <label class="filter-option"><input type="radio" name="date" value="month"><span>This Month</span></label>
+              <label class="filter-option"><input type="radio" name="date" value="3months"><span>Next 3 Months</span></label>
+              <label class="filter-option"><input type="radio" name="date" value="custom"><span>Custom Range</span></label>
+            </div>
+          </div>
+
+          <!-- Mode panel -->
+          <div class="tab-panel" role="tabpanel">
+            <div class="filter-options">
+              <label class="filter-option"><input type="radio" name="mode" value="virtual"><span>Virtual</span></label>
+              <label class="filter-option"><input type="radio" name="mode" value="inperson"><span>In-Person</span></label>
+              <label class="filter-option"><input type="radio" name="mode" value="hybrid"><span>Hybrid</span></label>
+            </div>
+          </div>
+
+          <!-- Tech Stack panel -->
+          <div class="tab-panel" role="tabpanel">
+            <div class="filter-options">
+              <label class="filter-option"><input type="checkbox" name="tech" value="web"><span>Web Dev</span></label>
+              <label class="filter-option"><input type="checkbox" name="tech" value="ai"><span>AI / ML</span></label>
+              <label class="filter-option"><input type="checkbox" name="tech" value="blockchain"><span>Blockchain</span></label>
+              <label class="filter-option"><input type="checkbox" name="tech" value="mobile"><span>Mobile Apps</span></label>
+              <label class="filter-option"><input type="checkbox" name="tech" value="iot"><span>IoT</span></label>
+            </div>
+          </div>
+
+          <!-- Experience panel -->
+          <div class="tab-panel" role="tabpanel">
+            <div class="filter-options">
+              <label class="filter-option"><input type="radio" name="level" value="beginner"><span>Beginner</span></label>
+              <label class="filter-option"><input type="radio" name="level" value="intermediate"><span>Intermediate</span></label>
+              <label class="filter-option"><input type="radio" name="level" value="advanced"><span>Advanced</span></label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Wave divider -->
+  <div class="wave-divider wave-down" style="background:var(--surface);" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C300,0 600,60 900,30 C1050,15 1150,45 1200,30 L1200,60 L0,60 Z" class="wave-to-navy"/>
+    </svg>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       STATS
+  ══════════════════════════════════════════ -->
+  <section class="stats-section grid-bg fade-in" aria-label="Platform statistics">
+    <div class="container">
+      <div class="stats-glow" aria-hidden="true"></div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Hackathons Listed</div></div>
+        <div class="stat-card"><div class="stat-number">10K+</div><div class="stat-label">Active Users</div></div>
+        <div class="stat-card"><div class="stat-number">50+</div><div class="stat-label">Countries</div></div>
+        <div class="stat-card"><div class="stat-number">$20,000+</div><div class="stat-label">Total Prizes</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave divider -->
+  <div class="wave-divider" style="background:var(--navy);" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C200,50 500,10 700,35 C900,55 1100,10 1200,30 L1200,60 L0,60 Z" class="wave-to-bg"/>
+    </svg>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HACKATHONS / CALENDAR
+       Note: The "Calendar" view toggle is a pure CSS
+       layout switch — list vs visual calendar grid.
+  ══════════════════════════════════════════ -->
+  <section id="calendar" class="calendar-section grid-bg" aria-label="Upcoming hackathons">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <h2>Upcoming Hackathons</h2>
+        <!-- Pure CSS view toggle: radio inputs control which layout is shown -->
+        <div class="view-toggle" role="group" aria-label="View toggle">
+          <input type="radio" name="view" id="list-view" checked>
+          <input type="radio" name="view" id="calendar-view">
+          <label for="list-view">☰ List</label>
+          <label for="calendar-view">📅 Calendar</label>
+        </div>
+      </div>
+
+      <!-- ─── LIST VIEW CONTENT ─── -->
+      <div class="list-view-content">
+
+        <!-- Featured card -->
+        <article class="featured-card fade-in" aria-label="Featured hackathon">
+          <div class="featured-left">
+            <span class="featured-tag">Editor's Pick · Featured</span>
+            <h2>Global AI Builders Summit 2026</h2>
+            <p>The world's largest AI hackathon — build cutting-edge solutions in NLP, computer vision, and generative AI. Top teams compete for a life-changing prize pool.</p>
+            <div class="feat-tech">
+              <span class="feat-tech-icon">🐍 Python</span>
+              <span class="feat-tech-icon">🔥 PyTorch</span>
+              <span class="feat-tech-icon">🧠 LLMs</span>
+              <span class="feat-tech-icon">☁️ AWS</span>
+            </div>
+            <div class="featured-actions">
+              <a href="#modal-auth" class="btn-register">Register Now</a>
+              <a href="#calendar" class="btn-secondary" style="border-color:rgba(167,139,250,0.5);color:#c4b5fd;">View Details</a>
+            </div>
+          </div>
+          <div class="featured-right">
+            <div class="featured-prize"><strong>$100K</strong><span>Prize Pool</span></div>
+            <div class="featured-stat"><strong>2,400+</strong><span>Registered</span></div>
+            <div>
+              <div style="font-size:.65rem;color:rgba(242,240,251,0.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem;text-align:right;">Starts in</div>
+              <div class="featured-countdown" aria-label="Time remaining">
+                <div class="cd-block"><strong>04</strong><span>Days</span></div>
+                <div class="cd-block"><strong>12</strong><span>Hrs</span></div>
+                <div class="cd-block"><strong>38</strong><span>Min</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hackathon cards grid -->
+        <div class="hackathon-grid">
+
+          <!-- Card 1 -->
+          <article class="hackathon-card fade-in" aria-label="AI Innovation Challenge 2026">
+            <div class="card-ribbon" aria-hidden="true">🔥 Hot</div>
+            <div class="card-header">
+              <span class="badge badge-virtual">⟡ Virtual</span>
+              <span class="badge badge-beginner">✦ Beginner</span>
+            </div>
+            <h3>AI Innovation Challenge 2026</h3>
+            <p class="card-description">Build AI-powered solutions to solve real-world problems using machine learning and deep learning technologies.</p>
+            <div class="card-info">
+              <div class="info-item"><span class="icon" aria-hidden="true">◷</span><div><strong>Date</strong><p>Apr 10–12, 2026</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◈</span><div><strong>Prize Pool</strong><p>$10,000</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◉</span><div><strong>Team Size</strong><p>2–4 members</p></div></div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag"><span class="t-icon">🐍</span>Python</span>
+              <span class="tech-tag"><span class="t-icon">🔥</span>TensorFlow</span>
+              <span class="tech-tag"><span class="t-icon">🧠</span>AI/ML</span>
+            </div>
+            <div class="card-stats">
+              <span>✧ 450 registered</span>
+              <span class="success-rate">◆ 15% Success Rate</span>
+            </div>
+            <div class="card-actions">
+              <a href="#calendar" class="btn-secondary">View Details</a>
+              <a href="#modal-auth" class="btn-register">Register Now</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="hackathon-card fade-in" aria-label="Web3 Builders Hackathon">
+            <div class="card-header">
+              <span class="badge badge-inperson">⟡ In-Person</span>
+              <span class="badge badge-intermediate">◈ Intermediate</span>
+            </div>
+            <h3>Web3 Builders Hackathon</h3>
+            <p class="card-description">Create decentralized applications on blockchain. Build the future of Web3 with Solidity and smart contracts.</p>
+            <div class="card-info">
+              <div class="info-item"><span class="icon" aria-hidden="true">◷</span><div><strong>Date</strong><p>Apr 18–20, 2026</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◈</span><div><strong>Prize Pool</strong><p>$25,000</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◉</span><div><strong>Team Size</strong><p>1–5 members</p></div></div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag"><span class="t-icon">💎</span>Solidity</span>
+              <span class="tech-tag"><span class="t-icon">⚛</span>React</span>
+              <span class="tech-tag"><span class="t-icon">🔗</span>Blockchain</span>
+            </div>
+            <div class="card-stats">
+              <span>✧ 280 registered</span>
+              <span class="success-rate">◆ 12% Success Rate</span>
+            </div>
+            <div class="card-actions">
+              <a href="#calendar" class="btn-secondary">View Details</a>
+              <a href="#modal-auth" class="btn-register">Register Now</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="hackathon-card fade-in" aria-label="Mobile App Innovation Sprint">
+            <div class="card-header">
+              <span class="badge badge-hybrid">⟡ Hybrid</span>
+              <span class="badge badge-beginner">✦ Beginner</span>
+            </div>
+            <h3>Mobile App Innovation Sprint</h3>
+            <p class="card-description">Design and develop innovative mobile applications using React Native, Flutter, or native Swift/Kotlin.</p>
+            <div class="card-info">
+              <div class="info-item"><span class="icon" aria-hidden="true">◷</span><div><strong>Date</strong><p>May 2–4, 2026</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◈</span><div><strong>Prize Pool</strong><p>$15,000</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◉</span><div><strong>Team Size</strong><p>2–3 members</p></div></div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag"><span class="t-icon">📱</span>React Native</span>
+              <span class="tech-tag"><span class="t-icon">🐦</span>Flutter</span>
+              <span class="tech-tag"><span class="t-icon">🍎</span>Swift</span>
+            </div>
+            <div class="card-stats">
+              <span>✧ 520 registered</span>
+              <span class="success-rate">◆ 18% Success Rate</span>
+            </div>
+            <div class="card-actions">
+              <a href="#calendar" class="btn-secondary">View Details</a>
+              <a href="#modal-auth" class="btn-register">Register Now</a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="hackathon-card fade-in" aria-label="Climate Tech Hackathon">
+            <div class="card-header">
+              <span class="badge badge-virtual">⟡ Virtual</span>
+              <span class="badge badge-intermediate">◈ Intermediate</span>
+            </div>
+            <h3>Climate Tech Hackathon</h3>
+            <p class="card-description">Build technology solutions to address climate change, sustainability, and environmental challenges facing our planet.</p>
+            <div class="card-info">
+              <div class="info-item"><span class="icon" aria-hidden="true">◷</span><div><strong>Date</strong><p>May 15–17, 2026</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◈</span><div><strong>Prize Pool</strong><p>$30,000</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◉</span><div><strong>Team Size</strong><p>2–5 members</p></div></div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag"><span class="t-icon">🌍</span>IoT</span>
+              <span class="tech-tag"><span class="t-icon">📊</span>Data Science</span>
+              <span class="tech-tag"><span class="t-icon">☁️</span>Cloud</span>
+            </div>
+            <div class="card-stats">
+              <span>✧ 340 registered</span>
+              <span class="success-rate">◆ 10% Success Rate</span>
+            </div>
+            <div class="card-actions">
+              <a href="#calendar" class="btn-secondary">View Details</a>
+              <a href="#modal-auth" class="btn-register">Register Now</a>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="hackathon-card fade-in" aria-label="HealthTech Innovation Cup">
+            <div class="card-ribbon" aria-hidden="true">🔥 Hot</div>
+            <div class="card-header">
+              <span class="badge badge-inperson">⟡ In-Person</span>
+              <span class="badge badge-advanced">◆ Advanced</span>
+            </div>
+            <h3>HealthTech Innovation Cup</h3>
+            <p class="card-description">Develop cutting-edge healthcare technology solutions that improve patient outcomes and medical efficiency worldwide.</p>
+            <div class="card-info">
+              <div class="info-item"><span class="icon" aria-hidden="true">◷</span><div><strong>Date</strong><p>Jun 5–7, 2026</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◈</span><div><strong>Prize Pool</strong><p>$50,000</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◉</span><div><strong>Team Size</strong><p>3–5 members</p></div></div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag"><span class="t-icon">⚕️</span>Medical AI</span>
+              <span class="tech-tag"><span class="t-icon">🔬</span>BioTech</span>
+              <span class="tech-tag"><span class="t-icon">📡</span>IoMT</span>
+            </div>
+            <div class="card-stats">
+              <span>✧ 210 registered</span>
+              <span class="success-rate">◆ 8% Success Rate</span>
+            </div>
+            <div class="card-actions">
+              <a href="#calendar" class="btn-secondary">View Details</a>
+              <a href="#modal-auth" class="btn-register">Register Now</a>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="hackathon-card fade-in" aria-label="GameDev Jam 2026">
+            <div class="card-header">
+              <span class="badge badge-hybrid">⟡ Hybrid</span>
+              <span class="badge badge-beginner">✦ Beginner</span>
+            </div>
+            <h3>GameDev Jam 2026</h3>
+            <p class="card-description">Create immersive gaming experiences in 48 hours using Unity, Unreal Engine, or web-based game engines.</p>
+            <div class="card-info">
+              <div class="info-item"><span class="icon" aria-hidden="true">◷</span><div><strong>Date</strong><p>Jun 20–22, 2026</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◈</span><div><strong>Prize Pool</strong><p>$12,000</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◉</span><div><strong>Team Size</strong><p>1–4 members</p></div></div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag"><span class="t-icon">🎮</span>Unity</span>
+              <span class="tech-tag"><span class="t-icon">🕹️</span>Unreal</span>
+              <span class="tech-tag"><span class="t-icon">🌐</span>WebGL</span>
+            </div>
+            <div class="card-stats">
+              <span>✧ 680 registered</span>
+              <span class="success-rate">◆ 22% Success Rate</span>
+            </div>
+            <div class="card-actions">
+              <a href="#calendar" class="btn-secondary">View Details</a>
+              <a href="#modal-auth" class="btn-register">Register Now</a>
+            </div>
+          </article>
+
+          <!-- Card 7 -->
+          <article class="hackathon-card fade-in" aria-label="FinTech Disruptors Challenge">
+            <div class="card-header">
+              <span class="badge badge-virtual">⟡ Virtual</span>
+              <span class="badge badge-intermediate">◈ Intermediate</span>
+            </div>
+            <h3>FinTech Disruptors Challenge</h3>
+            <p class="card-description">Reimagine banking, payments, and financial services with innovative technology and user experiences.</p>
+            <div class="card-info">
+              <div class="info-item"><span class="icon" aria-hidden="true">◷</span><div><strong>Date</strong><p>Jul 10–12, 2026</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◈</span><div><strong>Prize Pool</strong><p>$40,000</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◉</span><div><strong>Team Size</strong><p>2–4 members</p></div></div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag"><span class="t-icon">💰</span>DeFi</span>
+              <span class="tech-tag"><span class="t-icon">🔐</span>Security</span>
+              <span class="tech-tag"><span class="t-icon">📈</span>Analytics</span>
+            </div>
+            <div class="card-stats">
+              <span>✧ 390 registered</span>
+              <span class="success-rate">◆ 11% Success Rate</span>
+            </div>
+            <div class="card-actions">
+              <a href="#calendar" class="btn-secondary">View Details</a>
+              <a href="#modal-auth" class="btn-register">Register Now</a>
+            </div>
+          </article>
+
+          <!-- Card 8 -->
+          <article class="hackathon-card fade-in" aria-label="Open Source Sprint">
+            <div class="card-header">
+              <span class="badge badge-virtual">⟡ Virtual</span>
+              <span class="badge badge-advanced">◆ Advanced</span>
+            </div>
+            <h3>Open Source Sprint</h3>
+            <p class="card-description">Contribute to open-source projects, build developer tools, and improve the ecosystem for everyone.</p>
+            <div class="card-info">
+              <div class="info-item"><span class="icon" aria-hidden="true">◷</span><div><strong>Date</strong><p>Jul 25–27, 2026</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◈</span><div><strong>Prize Pool</strong><p>$8,000</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◉</span><div><strong>Team Size</strong><p>1–3 members</p></div></div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag"><span class="t-icon">🐧</span>Linux</span>
+              <span class="tech-tag"><span class="t-icon">🦀</span>Rust</span>
+              <span class="tech-tag"><span class="t-icon">🐹</span>Go</span>
+            </div>
+            <div class="card-stats">
+              <span>✧ 155 registered</span>
+              <span class="success-rate">◆ 30% Success Rate</span>
+            </div>
+            <div class="card-actions">
+              <a href="#calendar" class="btn-secondary">View Details</a>
+              <a href="#modal-auth" class="btn-register">Register Now</a>
+            </div>
+          </article>
+
+          <!-- Card 9 -->
+          <article class="hackathon-card fade-in" aria-label="EdTech Innovation Hackathon">
+            <div class="card-header">
+              <span class="badge badge-hybrid">⟡ Hybrid</span>
+              <span class="badge badge-beginner">✦ Beginner</span>
+            </div>
+            <h3>EdTech Innovation Hackathon</h3>
+            <p class="card-description">Build the future of education with interactive learning tools, AI tutors, and accessibility solutions.</p>
+            <div class="card-info">
+              <div class="info-item"><span class="icon" aria-hidden="true">◷</span><div><strong>Date</strong><p>Aug 8–10, 2026</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◈</span><div><strong>Prize Pool</strong><p>$18,000</p></div></div>
+              <div class="info-item"><span class="icon" aria-hidden="true">◉</span><div><strong>Team Size</strong><p>2–5 members</p></div></div>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag"><span class="t-icon">📚</span>LMS</span>
+              <span class="tech-tag"><span class="t-icon">🤖</span>AI Tutor</span>
+              <span class="tech-tag"><span class="t-icon">♿</span>A11y</span>
+            </div>
+            <div class="card-stats">
+              <span>✧ 430 registered</span>
+              <span class="success-rate">◆ 16% Success Rate</span>
+            </div>
+            <div class="card-actions">
+              <a href="#calendar" class="btn-secondary">View Details</a>
+              <a href="#modal-auth" class="btn-register">Register Now</a>
+            </div>
+          </article>
+
+        </div><!-- /.hackathon-grid -->
+      </div><!-- /.list-view-content -->
+
+      <!-- ─── CALENDAR VIEW CONTENT ─── -->
+      <!--
+        Pure CSS calendar: shown/hidden via the radio toggle above.
+        Uses a CSS Grid to display April 2026.
+      -->
+      <div class="cal-view-content">
+        <div class="cal-header">
+          <div class="cal-month-nav">
+            <a href="#calendar" class="cal-nav-btn" aria-label="Previous month">‹</a>
+            <h3 class="cal-month-title">April 2026</h3>
+            <a href="#calendar" class="cal-nav-btn" aria-label="Next month">›</a>
+          </div>
+          <div class="cal-legend">
+            <span class="cal-dot cal-dot-virtual"></span> Virtual
+            <span class="cal-dot cal-dot-inperson"></span> In-Person
+            <span class="cal-dot cal-dot-hybrid"></span> Hybrid
+          </div>
+        </div>
+
+        <!-- Day-of-week headers -->
+        <div class="cal-grid" aria-label="April 2026 calendar">
+          <div class="cal-day-name">Sun</div>
+          <div class="cal-day-name">Mon</div>
+          <div class="cal-day-name">Tue</div>
+          <div class="cal-day-name">Wed</div>
+          <div class="cal-day-name">Thu</div>
+          <div class="cal-day-name">Fri</div>
+          <div class="cal-day-name">Sat</div>
+
+          <!-- Week 1 (April starts on Wed) -->
+          <div class="cal-cell cal-empty"></div>
+          <div class="cal-cell cal-empty"></div>
+          <div class="cal-cell cal-empty"></div>
+          <div class="cal-cell"><span class="cal-date">1</span></div>
+          <div class="cal-cell"><span class="cal-date">2</span></div>
+          <div class="cal-cell"><span class="cal-date">3</span></div>
+          <div class="cal-cell"><span class="cal-date">4</span></div>
+
+          <!-- Week 2 -->
+          <div class="cal-cell"><span class="cal-date">5</span></div>
+          <div class="cal-cell"><span class="cal-date">6</span></div>
+          <div class="cal-cell"><span class="cal-date">7</span></div>
+          <div class="cal-cell"><span class="cal-date">8</span></div>
+          <div class="cal-cell"><span class="cal-date">9</span></div>
+          <!-- Apr 10: AI Innovation Challenge starts -->
+          <div class="cal-cell cal-has-event">
+            <span class="cal-date">10</span>
+            <a href="#modal-auth" class="cal-event cal-event-virtual" title="AI Innovation Challenge 2026 (Apr 10–12)">AI Innovation</a>
+          </div>
+          <div class="cal-cell cal-event-cont cal-event-virtual-cont">
+            <span class="cal-date">11</span>
+            <span class="cal-event-bar cal-event-virtual" aria-hidden="true"></span>
+          </div>
+
+          <!-- Week 3 -->
+          <div class="cal-cell cal-event-cont cal-event-virtual-cont">
+            <span class="cal-date">12</span>
+            <span class="cal-event-bar cal-event-virtual" aria-hidden="true"></span>
+          </div>
+          <div class="cal-cell"><span class="cal-date">13</span></div>
+          <div class="cal-cell"><span class="cal-date">14</span></div>
+          <div class="cal-cell"><span class="cal-date">15</span></div>
+          <div class="cal-cell"><span class="cal-date">16</span></div>
+          <div class="cal-cell"><span class="cal-date">17</span></div>
+          <!-- Apr 18: Web3 Builders starts -->
+          <div class="cal-cell cal-has-event">
+            <span class="cal-date">18</span>
+            <a href="#modal-auth" class="cal-event cal-event-inperson" title="Web3 Builders Hackathon (Apr 18–20)">Web3 Builders</a>
+          </div>
+
+          <!-- Week 4 -->
+          <div class="cal-cell cal-event-cont">
+            <span class="cal-date">19</span>
+            <span class="cal-event-bar cal-event-inperson" aria-hidden="true"></span>
+          </div>
+          <div class="cal-cell cal-event-cont">
+            <span class="cal-date">20</span>
+            <span class="cal-event-bar cal-event-inperson" aria-hidden="true"></span>
+          </div>
+          <div class="cal-cell"><span class="cal-date">21</span></div>
+          <div class="cal-cell"><span class="cal-date">22</span></div>
+          <div class="cal-cell"><span class="cal-date">23</span></div>
+          <div class="cal-cell"><span class="cal-date">24</span></div>
+          <div class="cal-cell"><span class="cal-date">25</span></div>
+
+          <!-- Week 5 -->
+          <div class="cal-cell"><span class="cal-date">26</span></div>
+          <div class="cal-cell"><span class="cal-date">27</span></div>
+          <div class="cal-cell"><span class="cal-date">28</span></div>
+          <div class="cal-cell"><span class="cal-date">29</span></div>
+          <div class="cal-cell"><span class="cal-date">30</span></div>
+          <div class="cal-cell cal-empty"></div>
+          <div class="cal-cell cal-empty"></div>
+        </div><!-- /.cal-grid -->
+
+        <!-- Upcoming events list below calendar -->
+        <div class="cal-upcoming">
+          <h4 class="cal-upcoming-title">Events This Month</h4>
+          <div class="cal-event-list">
+            <div class="cal-event-item">
+              <div class="cal-event-dot cal-event-virtual"></div>
+              <div class="cal-event-info">
+                <strong>AI Innovation Challenge 2026</strong>
+                <span>Apr 10–12 · Virtual · $10,000 prize</span>
+              </div>
+              <a href="#modal-auth" class="btn-register cal-register-btn">Register</a>
+            </div>
+            <div class="cal-event-item">
+              <div class="cal-event-dot cal-event-inperson"></div>
+              <div class="cal-event-info">
+                <strong>Web3 Builders Hackathon</strong>
+                <span>Apr 18–20 · In-Person · $25,000 prize</span>
+              </div>
+              <a href="#modal-auth" class="btn-register cal-register-btn">Register</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.cal-view-content -->
+
+    </div>
+  </section>
+
+  <!-- Wave divider -->
+  <div class="wave-divider" style="background:var(--bg);" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,20 C150,50 350,0 600,25 C850,50 1050,10 1200,20 L1200,60 L0,60 Z" class="wave-to-section"/>
+    </svg>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HOW IT WORKS
+  ══════════════════════════════════════════ -->
+  <section id="how-it-works" class="how-section grid-bg fade-in" aria-label="How HackHub works">
+    <div class="container">
+      <p class="section-label">Simple Process</p>
+      <h2 class="section-title">How HackHub Works</h2>
+      <div class="steps-grid">
+        <div class="step-card"><div class="step-number" aria-hidden="true">1</div><h3>Browse Hackathons</h3><p>Explore hundreds of hackathons filtered by your skills, location, and availability.</p></div>
+        <div class="step-card"><div class="step-number" aria-hidden="true">2</div><h3>Build Your Team</h3><p>Connect with talented developers, designers, and innovators from around the world.</p></div>
+        <div class="step-card"><div class="step-number" aria-hidden="true">3</div><h3>Register &amp; Compete</h3><p>Sign up in one click and receive all event details, resources, and updates directly.</p></div>
+        <div class="step-card"><div class="step-number" aria-hidden="true">4</div><h3>Win &amp; Grow</h3><p>Earn prizes, build your portfolio, and get recognised by top tech companies.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave divider -->
+  <div class="wave-divider wave-down" style="background:var(--surface);" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,35 C300,5 600,55 900,25 C1050,10 1150,40 1200,35 L1200,60 L0,60 Z" class="wave-to-bg"/>
+    </svg>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       TEAM FINDER
+       "Connect" button opens a message modal
+       using CSS :target (no JS).
+  ══════════════════════════════════════════ -->
+  <section id="find-team" class="team-section grid-bg" aria-label="Find your team">
+    <div class="container">
+      <div class="section-intro fade-in">
+        <p class="section-label">Team Finder</p>
+        <h2>Find Your Perfect Team</h2>
+        <p>Connect with talented developers, designers, and innovators from around the world</p>
+      </div>
+      <div class="team-grid">
+
+        <!-- Team member 1 -->
+        <article class="team-card fade-in" aria-label="Rahul Sharma profile">
+          <div class="member-status" title="Online" aria-label="Online"></div>
+          <div class="team-avatar"><div class="avatar-circle">RS</div></div>
+          <h3>Rahul Sharma</h3>
+          <p class="member-role">Full Stack Developer</p>
+          <p class="member-location">◎ Mumbai, India</p>
+          <div class="skills-section"><h4>Skills</h4><div class="skill-tags"><span class="skill-tag-member">React</span><span class="skill-tag-member">Node.js</span><span class="skill-tag-member">MongoDB</span></div></div>
+          <p class="member-bio">Looking for AI/ML expert to join Web3 hackathon. Have 3 years of full-stack experience and 2 previous wins.</p>
+          <div class="member-stats"><div class="stat-item"><strong>5</strong><span>Hackathons</span></div><div class="stat-item"><strong>2</strong><span>Wins</span></div><div class="stat-item"><strong>40%</strong><span>Success</span></div></div>
+          <!-- Opens message modal via CSS :target -->
+          <a href="#msg-rahul" class="btn-primary btn-block">Connect →</a>
+        </article>
+
+        <!-- Team member 2 -->
+        <article class="team-card fade-in" aria-label="Priya Kumar profile">
+          <div class="member-status" title="Online" aria-label="Online"></div>
+          <div class="team-avatar"><div class="avatar-circle avatar-pink">PK</div></div>
+          <h3>Priya Kumar</h3>
+          <p class="member-role">ML Engineer</p>
+          <p class="member-location">◎ Bangalore, India</p>
+          <div class="skills-section"><h4>Skills</h4><div class="skill-tags"><span class="skill-tag-member">Python</span><span class="skill-tag-member">TensorFlow</span><span class="skill-tag-member">PyTorch</span></div></div>
+          <p class="member-bio">Searching for frontend developer for AI Innovation Challenge. Passionate about deep learning and NLP.</p>
+          <div class="member-stats"><div class="stat-item"><strong>3</strong><span>Hackathons</span></div><div class="stat-item"><strong>1</strong><span>Wins</span></div><div class="stat-item"><strong>33%</strong><span>Success</span></div></div>
+          <a href="#msg-priya" class="btn-primary btn-block">Connect →</a>
+        </article>
+
+        <!-- Team member 3 -->
+        <article class="team-card fade-in" aria-label="Amit Singh profile">
+          <div class="member-status away" title="Away" aria-label="Away"></div>
+          <div class="team-avatar"><div class="avatar-circle avatar-green">AS</div></div>
+          <h3>Amit Singh</h3>
+          <p class="member-role">UI/UX Designer</p>
+          <p class="member-location">◎ Delhi, India</p>
+          <div class="skills-section"><h4>Skills</h4><div class="skill-tags"><span class="skill-tag-member">Figma</span><span class="skill-tag-member">Adobe XD</span><span class="skill-tag-member">Prototyping</span></div></div>
+          <p class="member-bio">Need developers for mobile app hackathon. Expert in user-centered design and creating amazing user experiences.</p>
+          <div class="member-stats"><div class="stat-item"><strong>7</strong><span>Hackathons</span></div><div class="stat-item"><strong>3</strong><span>Wins</span></div><div class="stat-item"><strong>43%</strong><span>Success</span></div></div>
+          <a href="#msg-amit" class="btn-primary btn-block">Connect →</a>
+        </article>
+
+        <!-- Team member 4 -->
+        <article class="team-card fade-in" aria-label="Neha Verma profile">
+          <div class="member-status" title="Online" aria-label="Online"></div>
+          <div class="team-avatar"><div class="avatar-circle avatar-teal">NV</div></div>
+          <h3>Neha Verma</h3>
+          <p class="member-role">Backend Engineer</p>
+          <p class="member-location">◎ Pune, India</p>
+          <div class="skills-section"><h4>Skills</h4><div class="skill-tags"><span class="skill-tag-member">Django</span><span class="skill-tag-member">PostgreSQL</span><span class="skill-tag-member">Docker</span></div></div>
+          <p class="member-bio">Looking for frontend + ML collaborators for HealthTech Cup. Strong in REST APIs and microservices.</p>
+          <div class="member-stats"><div class="stat-item"><strong>4</strong><span>Hackathons</span></div><div class="stat-item"><strong>2</strong><span>Wins</span></div><div class="stat-item"><strong>50%</strong><span>Success</span></div></div>
+          <a href="#msg-neha" class="btn-primary btn-block">Connect →</a>
+        </article>
+
+        <!-- Team member 5 -->
+        <article class="team-card fade-in" aria-label="Rohan Mehta profile">
+          <div class="member-status away" title="Away" aria-label="Away"></div>
+          <div class="team-avatar"><div class="avatar-circle avatar-orange">RM</div></div>
+          <h3>Rohan Mehta</h3>
+          <p class="member-role">DevOps Engineer</p>
+          <p class="member-location">◎ Hyderabad, India</p>
+          <div class="skills-section"><h4>Skills</h4><div class="skill-tags"><span class="skill-tag-member">Kubernetes</span><span class="skill-tag-member">AWS</span><span class="skill-tag-member">CI/CD</span></div></div>
+          <p class="member-bio">Seeking full-stack devs for FinTech Challenge. I handle infra, you handle the product — let's win together.</p>
+          <div class="member-stats"><div class="stat-item"><strong>6</strong><span>Hackathons</span></div><div class="stat-item"><strong>1</strong><span>Wins</span></div><div class="stat-item"><strong>17%</strong><span>Success</span></div></div>
+          <a href="#msg-rohan" class="btn-primary btn-block">Connect →</a>
+        </article>
+
+        <!-- Team member 6 -->
+        <article class="team-card fade-in" aria-label="Sneha Patel profile">
+          <div class="member-status" title="Online" aria-label="Online"></div>
+          <div class="team-avatar"><div class="avatar-circle avatar-rose">SP</div></div>
+          <h3>Sneha Patel</h3>
+          <p class="member-role">Data Scientist</p>
+          <p class="member-location">◎ Ahmedabad, India</p>
+          <div class="skills-section"><h4>Skills</h4><div class="skill-tags"><span class="skill-tag-member">Pandas</span><span class="skill-tag-member">Scikit-learn</span><span class="skill-tag-member">Tableau</span></div></div>
+          <p class="member-bio">Looking for a backend dev for Climate Tech Hackathon. I bring data insights, you bring the engine.</p>
+          <div class="member-stats"><div class="stat-item"><strong>3</strong><span>Hackathons</span></div><div class="stat-item"><strong>2</strong><span>Wins</span></div><div class="stat-item"><strong>67%</strong><span>Success</span></div></div>
+          <a href="#msg-sneha" class="btn-primary btn-block">Connect →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       MAKE YOUR OWN TEAM
+       New section below Find Team with step-by-step
+       guide on forming and leading a hackathon team.
+  ══════════════════════════════════════════ -->
+  <section id="make-team" class="make-team-section grid-bg" aria-label="Make your own team">
+    <div class="container">
+
+      <div class="section-intro fade-in">
+        <p class="section-label">Team Builder</p>
+        <h2>Build Your Own Team</h2>
+        <p>Ready to lead? Follow these steps to create and assemble your dream hackathon squad.</p>
+      </div>
+
+      <div class="make-team-grid">
+
+        <!-- Step 1 -->
+        <div class="make-step-card fade-in">
+          <div class="make-step-icon" aria-hidden="true">🎯</div>
+          <div class="make-step-num">Step 1</div>
+          <h3>Choose Your Hackathon</h3>
+          <p>Browse the calendar above and lock in a hackathon. Check the theme, tech stack, team size, and deadline before you start recruiting.</p>
+          <ul class="make-step-tips">
+            <li>Match the theme to your strongest skill</li>
+            <li>Check prize eligibility (student / open)</li>
+            <li>Note the submission deadline carefully</li>
+          </ul>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="make-step-card fade-in">
+          <div class="make-step-icon" aria-hidden="true">📋</div>
+          <div class="make-step-num">Step 2</div>
+          <h3>Define Your Roles</h3>
+          <p>Before recruiting, map out exactly what skills your project needs — not just "developers". Clear roles attract the right people.</p>
+          <ul class="make-step-tips">
+            <li>Frontend / Backend / Full-Stack</li>
+            <li>ML Engineer or Data Scientist</li>
+            <li>UI/UX Designer (don't skip this!)</li>
+            <li>DevOps / Presenter / Project Lead</li>
+          </ul>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="make-step-card fade-in">
+          <div class="make-step-icon" aria-hidden="true">🤝</div>
+          <div class="make-step-num">Step 3</div>
+          <h3>Recruit Teammates</h3>
+          <p>Use the Team Finder above to connect with members whose skills complement yours. Send a clear message with your project idea and what role you need filled.</p>
+          <ul class="make-step-tips">
+            <li>Be specific about the hackathon and role</li>
+            <li>Share a one-line project idea</li>
+            <li>Aim for 2–4 members max for agility</li>
+          </ul>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="make-step-card fade-in">
+          <div class="make-step-icon" aria-hidden="true">⚙️</div>
+          <div class="make-step-num">Step 4</div>
+          <h3>Set Up Your Workspace</h3>
+          <p>Before the hack starts, agree on your tools and workflow so you don't waste precious hours during the event.</p>
+          <ul class="make-step-tips">
+            <li>Create a shared GitHub org / repo</li>
+            <li>Set up a Discord or Slack channel</li>
+            <li>Choose a project management tool (Notion / Trello)</li>
+            <li>Agree on a tech stack and architecture</li>
+          </ul>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="make-step-card fade-in">
+          <div class="make-step-icon" aria-hidden="true">🚀</div>
+          <div class="make-step-num">Step 5</div>
+          <h3>Plan Your 48 Hours</h3>
+          <p>A winning team plans before they code. Divide the hackathon into phases and assign responsibilities upfront.</p>
+          <ul class="make-step-tips">
+            <li>Hours 0–4: Ideate, wireframe, plan</li>
+            <li>Hours 4–36: Build core features only</li>
+            <li>Hours 36–44: Polish UI and fix bugs</li>
+            <li>Hours 44–48: Prepare demo &amp; deck</li>
+          </ul>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="make-step-card fade-in">
+          <div class="make-step-icon" aria-hidden="true">🏆</div>
+          <div class="make-step-num">Step 6</div>
+          <h3>Present &amp; Win</h3>
+          <p>A great product with a poor demo won't win. Spend real time rehearsing your pitch — judges respond to clarity and confidence.</p>
+          <ul class="make-step-tips">
+            <li>Lead with the problem, not the tech</li>
+            <li>Live demo &gt; slides whenever possible</li>
+            <li>Keep it to 2–3 minutes max</li>
+            <li>Anticipate judge questions in advance</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- CTA to create a team -->
+      <div class="make-team-cta fade-in">
+        <div class="make-team-cta-text">
+          <h3>Ready to lead your first team?</h3>
+          <p>Sign in to post your team listing and start recruiting talented hackers for your next event.</p>
+        </div>
+        <a href="#modal-auth" class="btn-primary make-team-cta-btn">Create a Team →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CONTACT — redesigned with gradient card,
+       icons, and two-column premium layout
+  ══════════════════════════════════════════ -->
+  <section id="contact" class="contact-section grid-bg" aria-label="Contact HackHub">
+    <div class="container">
+
+      <div class="section-intro fade-in">
+        <p class="section-label">Get In Touch</p>
+        <h2>Contact Us</h2>
+        <p>Have questions, feedback, or want to list your hackathon? We'd love to hear from you.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Left: contact info with styled cards -->
+        <div class="contact-info fade-in">
+          <h2>Let's Talk</h2>
+          <p>Whether you want to list your hackathon, report an issue, or just say hi — reach out and we'll get back to you within 24 hours.</p>
+
+          <!-- Contact info cards -->
+          <div class="contact-cards">
+
+            <a href="mailto:hello@hackhub.io" class="contact-card">
+              <div class="contact-card-icon">📧</div>
+              <div>
+                <strong>Email Us</strong>
+                <span>hello@hackhub.io</span>
+              </div>
+            </a>
+
+            <a href="https://discord.gg/hackhub" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-card-icon">💬</div>
+              <div>
+                <strong>Discord Community</strong>
+                <span>discord.gg/hackhub</span>
+              </div>
+            </a>
+
+            <a href="https://twitter.com/HackHubHQ" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-card-icon">𝕏</div>
+              <div>
+                <strong>Twitter / X</strong>
+                <span>@HackHubHQ</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/hackhub" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-card-icon">⌥</div>
+              <div>
+                <strong>GitHub</strong>
+                <span>github.com/hackhub</span>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Response-time badge -->
+          <div class="contact-response-badge">
+            <span class="contact-response-dot"></span>
+            Team is active · avg. response &lt; 24 hrs
+          </div>
+        </div>
+
+        <!-- Right: message form -->
+        <div class="contact-form-box fade-in">
+          <h3>Send a Message</h3>
+          <p class="contact-form-sub">Fill out the form and we'll get back to you shortly.</p>
+          <form action="#contact" method="post" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-fname">First Name</label>
+                <input type="text" id="c-fname" placeholder="John" required>
+              </div>
+              <div class="form-group">
+                <label for="c-lname">Last Name</label>
+                <input type="text" id="c-lname" placeholder="Doe">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email</label>
+              <input type="email" id="c-email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="c-subject">Subject</label>
+              <select id="c-subject">
+                <option value="" disabled selected>Choose a topic…</option>
+                <option>List a Hackathon</option>
+                <option>Team / Profile Help</option>
+                <option>Report a Bug</option>
+                <option>Partnership / Sponsorship</option>
+                <option>General Question</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c-message">Message</label>
+              <textarea id="c-message" placeholder="Tell us more…" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="contact-submit">Send Message →</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER — cleaned: removed dead links
+       (Terms of Service, Cookie Policy,
+        Hackathon Guide, Blog, API Docs, Help Center)
+  ══════════════════════════════════════════ -->
+  <footer class="footer grid-bg" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand column -->
+        <div class="footer-section footer-brand-col">
+          <div class="footer-brand">
+            <div class="logo-icon" style="width:32px;height:32px;font-size:.9rem;" aria-hidden="true">✦</div>
+            <span style="font-family:'Outfit',sans-serif;font-size:1.25rem;font-weight:900;color:#e8e8e8;">HackHub</span>
+          </div>
+          <p>Your gateway to hackathons worldwide. Discover, connect, and build amazing projects.</p>
+          <!-- Social links -->
+          <nav class="social-links" aria-label="Social media links">
+            <a href="https://twitter.com/HackHubHQ" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)">𝕏</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">in</a>
+            <a href="https://github.com/hackhub" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">gh</a>
+            <a href="https://discord.gg/hackhub" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord">◈</a>
+          </nav>
+        </div>
+
+        <!-- Quick links — only working anchors -->
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#calendar">Browse Hackathons</a></li>
+            <li><a href="#find-team">Find a Team</a></li>
+            <li><a href="#make-team">Make a Team</a></li>
+            <li><a href="#how-it-works">How it Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal — only Privacy Policy which actually works -->
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#modal-privacy">Privacy Policy</a></li>
+          </ul>
+          <h4 style="margin-top:1.6rem;">Contact</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="mailto:hello@hackhub.io">hello@hackhub.io</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom bar -->
+      <div class="footer-bottom">
+        <p>© 2026 HackHub · All rights reserved · Made with ✦ for hackers worldwide</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#home" class="back-to-top" aria-label="Back to top"></a>
+
+  <!-- ══════════════════════════════════════════
+       AUTH MODAL — pure CSS :target trick
+       Google link goes to the real OAuth URL.
+  ══════════════════════════════════════════ -->
+  <div class="auth-overlay" id="modal-auth" role="dialog" aria-modal="true" aria-label="Sign in or create account">
+    <a href="#" class="auth-backdrop" aria-label="Close modal"></a>
+    <div class="auth-modal">
+      <a href="#" class="auth-close" aria-label="Close">✕</a>
+      <div class="auth-logo">
+        <div class="logo-icon" style="width:42px;height:42px;font-size:1.1rem;" aria-hidden="true">✦</div>
+        <span class="auth-brand">HackHub</span>
+      </div>
+
+      <div class="auth-tabs">
+        <input type="radio" name="auth-tab" id="tab-signin" checked>
+        <input type="radio" name="auth-tab" id="tab-signup">
+
+        <div class="auth-tab-labels" role="tablist">
+          <label for="tab-signin" class="auth-tab-label" role="tab">Sign In</label>
+          <label for="tab-signup" class="auth-tab-label" role="tab">Create Account</label>
+        </div>
+
+        <!-- SIGN IN PANEL -->
+        <div class="auth-panel" id="panel-signin" role="tabpanel">
+          <p class="auth-subtitle">Welcome back, hacker 👋</p>
+          <div class="auth-social-row">
+            <!--
+              FIX: "Continue with Google" now links to the
+              correct Google OAuth URL for the Swayam SSO.
+            -->
+            <a href="https://accounts.google.com/v3/signin/accountchooser?client_id=596741830401-il7r0gth52nbd1cmrppqerom1g8shtrb.apps.googleusercontent.com&context_uri=https%3A%2F%2Fswayam-sso.swayam2.ac.in&redirect_uri=https%3A%2F%2Fswayam-fb.swayam2.ac.in%2F__%2Fauth%2Fhandler&response_type=code&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+profile&flowName=GeneralOAuthFlow"
+               target="_blank" rel="noopener noreferrer" class="auth-social-btn">
+              <span aria-hidden="true">G</span> Continue with Google
+            </a>
+            <a href="https://github.com/login" target="_blank" rel="noopener noreferrer" class="auth-social-btn auth-social-gh">
+              <span aria-hidden="true">⌥</span> Continue with GitHub
+            </a>
+          </div>
+          <div class="auth-divider"><span>or sign in with email</span></div>
+          <form class="auth-form" action="#modal-auth" method="post">
+            <div class="auth-field">
+              <label for="si-email">Email</label>
+              <input type="email" id="si-email" placeholder="you@example.com" autocomplete="email">
+            </div>
+            <div class="auth-field">
+              <label for="si-pass">Password</label>
+              <input type="password" id="si-pass" placeholder="••••••••" autocomplete="current-password">
+              <a href="#modal-auth" class="auth-forgot">Forgot password?</a>
+            </div>
+            <button type="submit" class="auth-submit">Sign In →</button>
+          </form>
+          <p class="auth-switch">Don't have an account? <label for="tab-signup" class="auth-switch-link">Create one</label></p>
+        </div>
+
+        <!-- SIGN UP PANEL -->
+        <div class="auth-panel" id="panel-signup" role="tabpanel">
+          <p class="auth-subtitle">Join 10,000+ hackers worldwide ✦</p>
+          <div class="auth-social-row">
+            <a href="https://accounts.google.com/v3/signin/accountchooser?client_id=596741830401-il7r0gth52nbd1cmrppqerom1g8shtrb.apps.googleusercontent.com&context_uri=https%3A%2F%2Fswayam-sso.swayam2.ac.in&redirect_uri=https%3A%2F%2Fswayam-fb.swayam2.ac.in%2F__%2Fauth%2Fhandler&response_type=code&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+profile&flowName=GeneralOAuthFlow"
+               target="_blank" rel="noopener noreferrer" class="auth-social-btn">
+              <span aria-hidden="true">G</span> Continue with Google
+            </a>
+            <a href="https://github.com/login" target="_blank" rel="noopener noreferrer" class="auth-social-btn auth-social-gh">
+              <span aria-hidden="true">⌥</span> Continue with GitHub
+            </a>
+          </div>
+          <div class="auth-divider"><span>or sign up with email</span></div>
+          <form class="auth-form" action="#modal-auth" method="post">
+            <div class="auth-field-row">
+              <div class="auth-field"><label for="su-first">First Name</label><input type="text" id="su-first" placeholder="John"></div>
+              <div class="auth-field"><label for="su-last">Last Name</label><input type="text" id="su-last" placeholder="Doe"></div>
+            </div>
+            <div class="auth-field"><label for="su-email">Email</label><input type="email" id="su-email" placeholder="you@example.com" autocomplete="email"></div>
+            <div class="auth-field"><label for="su-pass">Password</label><input type="password" id="su-pass" placeholder="Create a strong password" autocomplete="new-password"></div>
+            <div class="auth-field">
+              <label for="su-role">I am a</label>
+              <select id="su-role">
+                <option>Developer</option>
+                <option>Designer</option>
+                <option>ML Engineer</option>
+                <option>Product Manager</option>
+                <option>Student</option>
+              </select>
+            </div>
+            <label class="auth-checkbox-row">
+              <input type="checkbox">
+              <span>I agree to the <a href="#modal-privacy">Privacy Policy</a></span>
+            </label>
+            <button type="submit" class="auth-submit">Create Account →</button>
+          </form>
+          <p class="auth-switch">Already have an account? <label for="tab-signin" class="auth-switch-link">Sign in</label></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       CONNECT MESSAGE MODALS — pure CSS :target
+       One modal per team member card.
+  ══════════════════════════════════════════ -->
+
+  <!-- Rahul Sharma message modal -->
+  <div class="msg-overlay" id="msg-rahul" role="dialog" aria-modal="true" aria-label="Message Rahul Sharma">
+    <a href="#find-team" class="auth-backdrop" aria-label="Close"></a>
+    <div class="msg-modal">
+      <a href="#find-team" class="auth-close" aria-label="Close">✕</a>
+      <div class="msg-modal-header">
+        <div class="avatar-circle msg-avatar">RS</div>
+        <div>
+          <h3>Rahul Sharma</h3>
+          <span class="member-role">Full Stack Developer · Mumbai</span>
+        </div>
+      </div>
+      <form action="#find-team" method="post" class="msg-form">
+        <div class="form-group">
+          <label for="msg-rs-name">Your Name</label>
+          <input type="text" id="msg-rs-name" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label for="msg-rs-email">Your Email</label>
+          <input type="email" id="msg-rs-email" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label for="msg-rs-hack">Which Hackathon?</label>
+          <select id="msg-rs-hack">
+            <option value="" disabled selected>Select a hackathon…</option>
+            <option>Global AI Builders Summit 2026</option>
+            <option>Web3 Builders Hackathon</option>
+            <option>AI Innovation Challenge 2026</option>
+            <option>FinTech Disruptors Challenge</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="msg-rs-body">Message</label>
+          <textarea id="msg-rs-body" rows="4" placeholder="Tell Rahul about yourself and your project idea…"></textarea>
+        </div>
+        <button type="submit" class="contact-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Priya Kumar message modal -->
+  <div class="msg-overlay" id="msg-priya" role="dialog" aria-modal="true" aria-label="Message Priya Kumar">
+    <a href="#find-team" class="auth-backdrop" aria-label="Close"></a>
+    <div class="msg-modal">
+      <a href="#find-team" class="auth-close" aria-label="Close">✕</a>
+      <div class="msg-modal-header">
+        <div class="avatar-circle avatar-pink msg-avatar">PK</div>
+        <div>
+          <h3>Priya Kumar</h3>
+          <span class="member-role">ML Engineer · Bangalore</span>
+        </div>
+      </div>
+      <form action="#find-team" method="post" class="msg-form">
+        <div class="form-group"><label for="msg-pk-name">Your Name</label><input type="text" id="msg-pk-name" placeholder="Your full name"></div>
+        <div class="form-group"><label for="msg-pk-email">Your Email</label><input type="email" id="msg-pk-email" placeholder="you@example.com"></div>
+        <div class="form-group">
+          <label for="msg-pk-hack">Which Hackathon?</label>
+          <select id="msg-pk-hack">
+            <option value="" disabled selected>Select a hackathon…</option>
+            <option>AI Innovation Challenge 2026</option>
+            <option>Global AI Builders Summit 2026</option>
+            <option>EdTech Innovation Hackathon</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="msg-pk-body">Message</label><textarea id="msg-pk-body" rows="4" placeholder="Tell Priya about yourself and your project idea…"></textarea></div>
+        <button type="submit" class="contact-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Amit Singh message modal -->
+  <div class="msg-overlay" id="msg-amit" role="dialog" aria-modal="true" aria-label="Message Amit Singh">
+    <a href="#find-team" class="auth-backdrop" aria-label="Close"></a>
+    <div class="msg-modal">
+      <a href="#find-team" class="auth-close" aria-label="Close">✕</a>
+      <div class="msg-modal-header">
+        <div class="avatar-circle avatar-green msg-avatar">AS</div>
+        <div>
+          <h3>Amit Singh</h3>
+          <span class="member-role">UI/UX Designer · Delhi</span>
+        </div>
+      </div>
+      <form action="#find-team" method="post" class="msg-form">
+        <div class="form-group"><label for="msg-as-name">Your Name</label><input type="text" id="msg-as-name" placeholder="Your full name"></div>
+        <div class="form-group"><label for="msg-as-email">Your Email</label><input type="email" id="msg-as-email" placeholder="you@example.com"></div>
+        <div class="form-group">
+          <label for="msg-as-hack">Which Hackathon?</label>
+          <select id="msg-as-hack">
+            <option value="" disabled selected>Select a hackathon…</option>
+            <option>Mobile App Innovation Sprint</option>
+            <option>GameDev Jam 2026</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="msg-as-body">Message</label><textarea id="msg-as-body" rows="4" placeholder="Tell Amit about yourself and your project idea…"></textarea></div>
+        <button type="submit" class="contact-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Neha Verma message modal -->
+  <div class="msg-overlay" id="msg-neha" role="dialog" aria-modal="true" aria-label="Message Neha Verma">
+    <a href="#find-team" class="auth-backdrop" aria-label="Close"></a>
+    <div class="msg-modal">
+      <a href="#find-team" class="auth-close" aria-label="Close">✕</a>
+      <div class="msg-modal-header">
+        <div class="avatar-circle avatar-teal msg-avatar">NV</div>
+        <div>
+          <h3>Neha Verma</h3>
+          <span class="member-role">Backend Engineer · Pune</span>
+        </div>
+      </div>
+      <form action="#find-team" method="post" class="msg-form">
+        <div class="form-group"><label for="msg-nv-name">Your Name</label><input type="text" id="msg-nv-name" placeholder="Your full name"></div>
+        <div class="form-group"><label for="msg-nv-email">Your Email</label><input type="email" id="msg-nv-email" placeholder="you@example.com"></div>
+        <div class="form-group"><label for="msg-nv-body">Message</label><textarea id="msg-nv-body" rows="4" placeholder="Tell Neha about yourself and your project idea…"></textarea></div>
+        <button type="submit" class="contact-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Rohan Mehta message modal -->
+  <div class="msg-overlay" id="msg-rohan" role="dialog" aria-modal="true" aria-label="Message Rohan Mehta">
+    <a href="#find-team" class="auth-backdrop" aria-label="Close"></a>
+    <div class="msg-modal">
+      <a href="#find-team" class="auth-close" aria-label="Close">✕</a>
+      <div class="msg-modal-header">
+        <div class="avatar-circle avatar-orange msg-avatar">RM</div>
+        <div>
+          <h3>Rohan Mehta</h3>
+          <span class="member-role">DevOps Engineer · Hyderabad</span>
+        </div>
+      </div>
+      <form action="#find-team" method="post" class="msg-form">
+        <div class="form-group"><label for="msg-rm-name">Your Name</label><input type="text" id="msg-rm-name" placeholder="Your full name"></div>
+        <div class="form-group"><label for="msg-rm-email">Your Email</label><input type="email" id="msg-rm-email" placeholder="you@example.com"></div>
+        <div class="form-group"><label for="msg-rm-body">Message</label><textarea id="msg-rm-body" rows="4" placeholder="Tell Rohan about yourself and your project idea…"></textarea></div>
+        <button type="submit" class="contact-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sneha Patel message modal -->
+  <div class="msg-overlay" id="msg-sneha" role="dialog" aria-modal="true" aria-label="Message Sneha Patel">
+    <a href="#find-team" class="auth-backdrop" aria-label="Close"></a>
+    <div class="msg-modal">
+      <a href="#find-team" class="auth-close" aria-label="Close">✕</a>
+      <div class="msg-modal-header">
+        <div class="avatar-circle avatar-rose msg-avatar">SP</div>
+        <div>
+          <h3>Sneha Patel</h3>
+          <span class="member-role">Data Scientist · Ahmedabad</span>
+        </div>
+      </div>
+      <form action="#find-team" method="post" class="msg-form">
+        <div class="form-group"><label for="msg-sp-name">Your Name</label><input type="text" id="msg-sp-name" placeholder="Your full name"></div>
+        <div class="form-group"><label for="msg-sp-email">Your Email</label><input type="email" id="msg-sp-email" placeholder="you@example.com"></div>
+        <div class="form-group"><label for="msg-sp-body">Message</label><textarea id="msg-sp-body" rows="4" placeholder="Tell Sneha about yourself and your project idea…"></textarea></div>
+        <button type="submit" class="contact-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       PRIVACY POLICY MODAL — pure CSS :target
+  ══════════════════════════════════════════ -->
+  <div class="privacy-overlay" id="modal-privacy" role="dialog" aria-modal="true" aria-label="Privacy Policy">
+    <a href="#" class="auth-backdrop" aria-label="Close"></a>
+    <div class="privacy-modal">
+      <a href="#" class="auth-close" aria-label="Close">✕</a>
+      <div class="privacy-modal-inner">
+        <div class="auth-logo">
+          <div class="logo-icon" style="width:36px;height:36px;font-size:.9rem;" aria-hidden="true">✦</div>
+          <span class="auth-brand">HackHub</span>
+        </div>
+        <h1>Privacy Policy</h1>
+        <p class="privacy-date">Last updated: March 27, 2026</p>
+        <div class="privacy-section"><h2>Introduction</h2><p>Welcome to HackHub. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our platform.</p></div>
+        <div class="privacy-section"><h2>Information We Collect</h2><p>We collect information you provide directly, including account details (name, email, password), profile information (skills, location, bio), communication data, and usage data about how you interact with our platform.</p></div>
+        <div class="privacy-section"><h2>Third-Party Authentication</h2><p>HackHub offers sign-in through Google and GitHub. When you use these services we receive only the information you authorize (name, email, profile picture). We never store your third-party passwords.</p></div>
+        <div class="privacy-section"><h2>How We Use Your Information</h2><p>We use your data to create and manage your account, match you with relevant hackathons, facilitate team connections, send transactional emails, analyze usage patterns to improve our services, and comply with legal obligations.</p></div>
+        <div class="privacy-section"><h2>Information Sharing</h2><p>We do not sell, trade, or rent your personal information. We may share it with trusted service providers under confidentiality agreements, or when required by law.</p></div>
+        <div class="privacy-section"><h2>Your Rights</h2><p>Depending on your location, you may have the right to access, correct, delete, or export your personal data. Contact us at <strong>hello@hackhub.io</strong> to exercise these rights.</p></div>
+        <div class="privacy-section"><h2>Security</h2><p>We implement industry-standard security measures including SSL/TLS encryption and access controls. No method of transmission over the Internet is 100% secure.</p></div>
+        <div class="privacy-section"><h2>Contact</h2><p>Questions? Reach us at <strong>hello@hackhub.io</strong></p></div>
+      </div>
+    </div>
+  </div>
+<script src="jshackhub.js"></script>
+</body>
+</html>
